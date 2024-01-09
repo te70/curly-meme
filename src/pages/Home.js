@@ -3,9 +3,19 @@ import React from 'react';
 import WomanImg from '../img/home/woman.png';
 //import link
 import { Link } from 'react-router-dom';
+// import motion
+import { motion } from 'framer-motion';
+// import transition
+import { transition1 } from '../transitions';
 
 const Home = () => {
-  return (<section className='section'>
+  return (
+  <motion.section 
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity:0 }}
+    transition={transition1}
+  className='section'>
     <div className='container mx-auto h-full relative'>
       {/* text & img wrapper */}
       <div className='flex flex-col justify-center'>
@@ -27,7 +37,7 @@ const Home = () => {
       </div>
       </div>
     </div>
-  </section>
+  </motion.section>
   );
 };
 
